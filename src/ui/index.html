@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:">
+  <title>飞牛桌面</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">fn</span><span>飞牛桌面<small>NAS 工作空间</small></span></div>
+    <div class="section-heading"><span>我的账号</span><button class="icon-button add" id="add" title="添加账号" aria-label="添加账号"><i data-lucide="plus"></i></button></div>
+    <div id="profiles" class="profiles"></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span>独立会话 · 本机保存</span></div>
+  </aside>
+  <main>
+    <header>
+      <div class="topline"><div class="page-name"><span id="page-title">工作空间</span><span id="loading" class="loading" hidden></span></div><button class="icon-button" id="edit" title="编辑当前账号" aria-label="编辑当前账号" hidden><i data-lucide="settings-2"></i></button></div>
+      <div class="toolbar">
+        <div class="nav-group">
+          <button class="icon-button" id="back" title="后退" aria-label="后退" disabled><i data-lucide="arrow-left"></i></button>
+          <button class="icon-button" id="forward" title="前进" aria-label="前进" disabled><i data-lucide="arrow-right"></i></button>
+          <button class="icon-button" id="reload" title="刷新" aria-label="刷新" disabled><i data-lucide="rotate-cw"></i></button>
+          <button class="icon-button" id="home" title="返回首页" aria-label="返回首页" disabled><i data-lucide="house"></i></button>
+        </div>
+        <div class="address"><i data-lucide="globe-2"></i><span id="address">选择账号以打开飞牛 NAS</span></div>
+      </div>
+    </header>
+    <section class="welcome" id="welcome">
+      <div class="welcome-mark"><span>fn</span></div>
+      <h1>连接你的飞牛 NAS</h1>
+      <p>添加一个常用的网页地址，登录后即可在这里切换多个独立账号。</p>
+      <button class="primary" id="welcome-add"><i data-lucide="plus"></i>添加账号</button>
+    </section>
+    <div id="notice" class="notice" hidden><i data-lucide="circle-alert"></i><span id="notice-text"></span><button class="icon-button" id="notice-close" title="关闭提示" aria-label="关闭提示"><i data-lucide="x"></i></button></div>
+  </main>
+  <dialog id="editor">
+    <form id="profile-form" novalidate>
+      <div class="dialog-head"><div><h2 id="dialog-title">添加账号</h2><p>使用你在浏览器中访问飞牛的地址</p></div><button type="button" class="icon-button" id="cancel-x" title="关闭" aria-label="关闭"><i data-lucide="x"></i></button></div>
+      <label for="name">显示名称</label><input id="name" maxlength="40" placeholder="例如：家里的 NAS" autocomplete="off" required>
+      <label for="url">飞牛网页地址</label><input id="url" type="text" placeholder="例如：http://192.168.1.10:5666" spellcheck="false" autocomplete="url" required>
+      <p class="field-help">不同账号可使用相同地址，登录状态互不影响。</p>
+      <div class="form-error" id="form-error" role="alert" hidden></div>
+      <div class="dialog-actions"><button type="button" class="danger" id="delete" hidden>删除账号</button><span class="spacer"></span><button type="button" class="secondary" id="cancel">取消</button><button type="submit" class="primary" id="save">保存并打开</button></div>
+    </form>
+  </dialog>
+  <script src="../../node_modules/lucide/dist/umd/lucide.min.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

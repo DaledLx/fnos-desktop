@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+*.zip
+profiles.json
+session-cookies/
+Partitions/
+pve-desktop*/

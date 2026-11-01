@@ -1,0 +1,70 @@
+:root { font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif; color: #1d2b29; background: #f6f8f8; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; min-width: 760px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .38; }
+button:focus-visible, input:focus-visible { outline: 2px solid #278a71; outline-offset: 2px; }
+svg { width: 18px; height: 18px; stroke-width: 1.8; flex: none; }
+.sidebar { position: fixed; inset: 0 auto 0 0; width: 252px; background: #142c2a; color: #f3f8f6; display: flex; flex-direction: column; z-index: 2; }
+.brand { height: 104px; display: flex; align-items: center; gap: 13px; padding: 0 22px; font-size: 18px; font-weight: 650; }
+.brand small { display: block; margin-top: 3px; color: #92aaa3; font-size: 11px; font-weight: 400; }
+.brand-mark, .welcome-mark { display: grid; place-items: center; background: #64c5a6; color: #113f34; font-weight: 800; letter-spacing: -2px; }
+.brand-mark { width: 38px; height: 38px; border-radius: 9px; font-size: 21px; }
+.section-heading { height: 44px; padding: 0 16px 0 24px; display: flex; align-items: center; justify-content: space-between; color: #9cb7ae; font-size: 12px; font-weight: 600; }
+.icon-button { border: 0; background: transparent; width: 34px; height: 34px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; color: inherit; flex: none; }
+.icon-button:not(:disabled):hover { background: #e9f0ee; }
+.sidebar .icon-button:not(:disabled):hover { background: #27443e; }
+.profiles { flex: 1; overflow: auto; padding: 5px 10px; }
+.profile { width: 100%; display: flex; align-items: center; gap: 11px; text-align: left; padding: 10px 12px; background: transparent; border: 0; color: #d4e4df; border-radius: 6px; margin-bottom: 3px; min-height: 62px; }
+.profile:hover { background: #213d37; }
+.profile.active { background: #2b5145; color: white; }
+.avatar { display: grid; place-items: center; width: 35px; height: 35px; flex: none; border-radius: 6px; background: #416b5e; color: #ecfff5; font-size: 15px; font-weight: 650; }
+.profile.active .avatar { background: #6acaa9; color: #123a30; }
+.profile-text { min-width: 0; display: block; }
+.profile-name, .profile-url { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.profile-name { font-size: 13px; font-weight: 600; }
+.profile-url { margin-top: 4px; color: #91afa5; font-size: 11px; }
+.sidebar-bottom { border-top: 1px solid #2a4540; height: 56px; padding: 0 24px; display: flex; align-items: center; gap: 9px; color: #96b4a9; font-size: 11px; }
+.status-dot { width: 7px; height: 7px; background: #71d2a8; border-radius: 50%; }
+main { margin-left: 252px; }
+header { height: 104px; background: white; border-bottom: 1px solid #e2e9e7; }
+.topline { height: 47px; padding: 0 19px 0 25px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #edf0ef; }
+.page-name { display: flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 650; }
+.loading { width: 13px; height: 13px; border: 2px solid #c7e9dd; border-top-color: #278a71; border-radius: 50%; animation: spin .75s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.toolbar { height: 57px; display: flex; align-items: center; padding: 0 21px; gap: 21px; }
+.nav-group { display: flex; align-items: center; gap: 2px; color: #52625e; }
+.address { min-width: 0; height: 34px; padding: 0 12px; display: flex; align-items: center; gap: 9px; flex: 1; border: 1px solid #e5ebe9; background: #f7f9f8; border-radius: 6px; color: #758783; font-size: 12px; }
+.address svg { width: 15px; height: 15px; }
+.address span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.welcome { height: calc(100vh - 104px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px; }
+.welcome-mark { width: 76px; height: 76px; border-radius: 19px; font-size: 41px; box-shadow: 0 15px 30px #24483918; }
+h1 { margin: 28px 0 9px; font-size: 22px; font-weight: 650; }
+.welcome p { margin: 0 0 26px; max-width: 380px; color: #6d807a; font-size: 13px; line-height: 1.8; }
+.primary, .secondary, .danger { min-height: 36px; border-radius: 6px; padding: 0 15px; font-size: 13px; font-weight: 600; }
+.primary { background: #278a71; border: 1px solid #278a71; color: white; display: inline-flex; align-items: center; gap: 7px; }
+.primary:hover { background: #1e715d; }
+.primary svg { width: 16px; height: 16px; }
+.secondary { background: white; border: 1px solid #d8e2de; color: #42554f; }
+.secondary:hover { background: #f1f5f3; }
+.danger { border: 0; background: transparent; color: #bd514a; padding-left: 0; }
+.danger:hover { color: #96362f; }
+.notice { position: fixed; left: 275px; bottom: 22px; max-width: calc(100vw - 300px); display: flex; align-items: center; gap: 10px; background: #fff8ed; border: 1px solid #efd6ae; box-shadow: 0 8px 28px #253a321a; color: #684e2e; border-radius: 6px; padding: 6px 8px 6px 13px; font-size: 12px; z-index: 3; }
+.notice[hidden] { display: none; }
+.notice svg { width: 16px; height: 16px; }
+.notice span { overflow-wrap: anywhere; }
+dialog { width: min(450px, calc(100vw - 40px)); border: 1px solid #e1e9e6; border-radius: 8px; padding: 0; box-shadow: 0 24px 70px #071b1750; color: #1d2b29; }
+dialog::backdrop { background: #102b2780; }
+form { padding: 24px; }
+.dialog-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 23px; }
+h2 { margin: 0; font-size: 18px; }
+.dialog-head p { margin: 7px 0 0; color: #758580; font-size: 12px; }
+label { display: block; margin: 16px 0 7px; font-size: 12px; font-weight: 650; }
+input { width: 100%; height: 39px; border: 1px solid #d9e3df; border-radius: 6px; padding: 0 11px; outline: none; font-size: 13px; }
+input:focus { border-color: #278a71; }
+.field-help { margin: 8px 0 0; color: #7d8d87; font-size: 11px; }
+.form-error { margin-top: 13px; font-size: 12px; color: #b94038; }
+.dialog-actions { display: flex; align-items: center; gap: 9px; margin-top: 28px; }
+.spacer { flex: 1; }

@@ -1,0 +1,42 @@
+{
+  "name": "fnos-desktop",
+  "version": "0.1.2",
+  "private": true,
+  "description": "Windows desktop client for multiple fnOS accounts",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.js",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "dependencies": {
+    "lucide": "^0.468.0"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0",
+    "playwright-core": "^1.64.1"
+  },
+  "build": {
+    "appId": "dev.fnos.desktop",
+    "productName": "飞牛桌面",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json",
+      "node_modules/lucide/dist/umd/lucide.min.js"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
